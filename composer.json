@@ -12,12 +12,28 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "src/themes/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "src/modules/*",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "~1.7.0",
         "drupal/addtoany": "^2.0",
         "drupal/admin_toolbar": "^3.6",
+        "drupal/bootstrap_barrio": "^5.5",
         "drupal/config_split": "^2.0",
         "drupal/core-composer-scaffold": "^11.3",
         "drupal/core-project-message": "^11.3",
@@ -25,6 +41,9 @@
         "drupal/core-recommended": "^11.3",
         "drupal/field_group": "^4.0",
         "drupal/gin": "^5.0",
+        "drupal/rabbit_hole": "^1.1",
+        "drupal/rest_api_authentication": "^2.1",
+        "drupal/social_link_field": "^2.1",
         "drush/drush": "^13.7"
     },
     "conflict": {
@@ -35,13 +54,14 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-recipe-unpack": true,
-            "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-recipe-unpack": true,
             "php-http/discovery": true,
-            "php-tuf/composer-integration": true
+            "php-tuf/composer-integration": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
@@ -83,6 +103,9 @@
                 "type:drupal-recipe"
             ]
         },
+        "patches": {
+
+        },
         "drupal-core-project-message": {
             "include-keys": [
                 "homepage",
@@ -104,5 +127,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "orangepi_drupal/renify_courtmanager": "@dev"
     }
 }

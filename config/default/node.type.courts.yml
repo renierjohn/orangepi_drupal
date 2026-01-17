@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Courts
 type: courts
-description: null
+description: 'List of Courts'
 help: null
 new_revision: true
 preview_mode: 1

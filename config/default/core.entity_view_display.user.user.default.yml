@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_court_logo
+    - field.field.user.user.field_court_logo_preview
+    - field.field.user.user.field_social_media_link
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - social_link_field
     - user
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -15,6 +19,35 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_court_logo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_court_logo_preview:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_social_media_link:
+    type: font_awesome
+    label: above
+    settings:
+      icon_type: common
+      orientation: vertical
+      new_tab: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
   member_for:
     weight: 5
     region: content
@@ -22,8 +55,8 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: content
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }

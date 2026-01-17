@@ -1,0 +1,14 @@
+uuid: 6f98f769-2a27-4e87-8d81-f7940501a319
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.payments
+id: node_type_payments
+entity_type_id: node_type
+entity_id: payments
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,4 +1,4 @@
-uuid: edd7f04f-0279-43fe-b0e0-f0e6ad7c514f
+uuid: 00ce7f27-8bc9-4891-ae0f-cea8e0d13460
 langcode: en
 status: true
 dependencies:
@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Players
-type: players
-description: 'List of Players'
+name: Payments
+type: payments
+description: 'List of Payments from users'
 help: null
 new_revision: true
 preview_mode: 1

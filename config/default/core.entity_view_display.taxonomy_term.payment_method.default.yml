@@ -1,0 +1,30 @@
+uuid: 385a1598-f044-42b2-abda-97923450e89e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.payment_method.field_image
+    - taxonomy.vocabulary.payment_method
+  module:
+    - text
+id: taxonomy_term.payment_method.default
+targetEntityType: taxonomy_term
+bundle: payment_method
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

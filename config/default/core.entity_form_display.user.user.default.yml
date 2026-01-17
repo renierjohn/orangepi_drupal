@@ -3,11 +3,68 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_court_logo
+    - field.field.user.user.field_court_logo_preview
+    - field.field.user.user.field_social_media_link
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - field_group
     - image
+    - social_link_field
     - user
+third_party_settings:
+  field_group:
+    group_group:
+      children:
+        - group_credentials
+        - group_data
+      label: Group
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_credentials:
+      children:
+        - account
+      label: Credentials
+      region: content
+      parent_name: group_group
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_data:
+      children:
+        - field_court_logo
+        - field_court_logo_preview
+        - field_social_media_link
+      label: Data
+      region: content
+      parent_name: group_group
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: Yj33guGRXeB-uq182k6bwtAUtKGpO17nkYxn8FnjhBM
 id: user.user.default
@@ -16,20 +73,35 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
-    region: content
-  language:
-    weight: 0
-    region: content
-  timezone:
     weight: 6
     region: content
-  user_picture:
+    settings: {  }
+    third_party_settings: {  }
+  field_court_logo:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_court_logo_preview:
     type: image_image
-    weight: -1
+    weight: 10
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-hidden: {  }
+  field_social_media_link:
+    type: social_links
+    weight: 11
+    region: content
+    settings:
+      select_social: false
+      disable_weight: false
+    third_party_settings: {  }
+hidden:
+  language: true
+  timezone: true
+  user_picture: true

@@ -1,0 +1,14 @@
+uuid: 690a4f86-5bbc-4f4d-821f-005a1f4e1c40
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.payment_method
+id: taxonomy_vocabulary_payment_method
+entity_type_id: taxonomy_vocabulary
+entity_id: payment_method
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
