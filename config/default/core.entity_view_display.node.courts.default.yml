@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.courts.field_booking_fee
     - field.field.node.courts.field_court_owner
     - field.field.node.courts.field_dayspecificunavailablehour
+    - field.field.node.courts.field_unavailable_day_time_ui
     - field.field.node.courts.field_unavailabledays
     - field.field.node.courts.field_unavailablehours
     - node.type.courts
   module:
+    - custom_field
     - user
 id: node.courts.default
 targetEntityType: node
@@ -41,6 +43,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_unavailable_day_time_ui:
+    type: custom_formatter
+    label: above
+    settings:
+      fields: {  }
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_unavailabledays:
     type: basic_string

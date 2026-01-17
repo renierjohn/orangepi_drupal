@@ -1,11 +1,11 @@
-uuid: e9e5f052-e9da-4c56-9fb7-30cea6b9bae8
+uuid: 7732d97a-91c9-4e66-8c38-c1d8615a0d45
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_image
-field_name: field_image
+id: taxonomy_term.field_payment_image
+field_name: field_payment_image
 entity_type: taxonomy_term
 type: string
 settings:

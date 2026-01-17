@@ -5,11 +5,18 @@ dependencies:
   config:
     - field.field.user.user.field_court_logo
     - field.field.user.user.field_court_logo_preview
+    - field.field.user.user.field_courts
+    - field.field.user.user.field_location
+    - field.field.user.user.field_payment_method
+    - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
+    - field.field.user.user.field_subsciption
+    - field.field.user.user.field_tawkto
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - options
     - social_link_field
     - user
 _core:
@@ -38,6 +45,38 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
+  field_courts:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_payment_method:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_slack_uri:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_social_media_link:
     type: font_awesome
     label: above
@@ -47,6 +86,21 @@ content:
       new_tab: true
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_subsciption:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_tawkto:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
     region: content
   member_for:
     weight: 5

@@ -1,15 +1,15 @@
-uuid: d23ee96d-3c34-48be-8c6a-a8a739f85281
+uuid: 79685aaa-384c-4f69-b0f2-d1fbb3223d14
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_image
+    - field.storage.taxonomy_term.field_payment_image
     - taxonomy.vocabulary.payment_method
-id: taxonomy_term.payment_method.field_image
-field_name: field_image
+id: taxonomy_term.payment_method.field_payment_image
+field_name: field_payment_image
 entity_type: taxonomy_term
 bundle: payment_method
-label: 'image (URL only)'
+label: 'Payment Image'
 description: ''
 required: false
 translatable: false

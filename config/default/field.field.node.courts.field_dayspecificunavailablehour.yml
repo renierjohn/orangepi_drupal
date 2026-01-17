@@ -9,7 +9,7 @@ id: node.courts.field_dayspecificunavailablehour
 field_name: field_dayspecificunavailablehour
 entity_type: node
 bundle: courts
-label: 'Unavailable Time'
+label: 'Unavailable Day Time'
 description: ''
 required: false
 translatable: false
