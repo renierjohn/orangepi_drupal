@@ -1,6 +1,6 @@
 #!/bin/bash
-composer install
-drush updb -y
-drush cim -y
-drush cr
-drush uli
+bash scripts/composer.sh install
+bash scripts/drush updb -y
+bash scripts/drush cim -y
+bash scripts/drush cr
+bash scripts/drush uli
