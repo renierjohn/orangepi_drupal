@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_company_name
     - field.field.user.user.field_court_logo
     - field.field.user.user.field_court_logo_preview
     - field.field.user.user.field_courts
@@ -26,6 +27,7 @@ third_party_settings:
       children:
         - group_credentials
         - group_data
+        - group_payment
         - group_notifications
         - group_courts
       label: Group
@@ -58,15 +60,15 @@ third_party_settings:
         required_fields: true
     group_data:
       children:
+        - field_company_name
         - field_location
         - field_court_logo
         - field_court_logo_preview
         - field_social_media_link
-        - field_payment_method
       label: Data
       region: content
       parent_name: group_group
-      weight: 15
+      weight: 14
       format_type: tab
       format_settings:
         classes: ''
@@ -109,6 +111,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_payment:
+      children:
+        - field_payment_method
+      label: Payment
+      region: content
+      parent_name: group_group
+      weight: 15
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: Yj33guGRXeB-uq182k6bwtAUtKGpO17nkYxn8FnjhBM
 id: user.user.default
@@ -121,9 +139,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_company_name:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_court_logo:
     type: string_textfield
-    weight: 12
+    weight: 17
     region: content
     settings:
       size: 60
@@ -131,7 +157,7 @@ content:
     third_party_settings: {  }
   field_court_logo_preview:
     type: image_image
-    weight: 13
+    weight: 18
     region: content
     settings:
       progress_indicator: throbber
@@ -157,7 +183,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: string_textfield
-    weight: 11
+    weight: 16
     region: content
     settings:
       size: 60
@@ -165,7 +191,7 @@ content:
     third_party_settings: {  }
   field_payment_method:
     type: inline_entity_form_complex
-    weight: 15
+    weight: 20
     region: content
     settings:
       form_mode: default
@@ -191,7 +217,7 @@ content:
     third_party_settings: {  }
   field_social_media_link:
     type: social_links
-    weight: 14
+    weight: 19
     region: content
     settings:
       select_social: false
